@@ -1,0 +1,125 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/container-queries";
+@source "../../src";
+
+@theme {
+  --color-tertiary-fixed-dim: #f2f0f0;
+  --color-secondary-container: #dee3e9;
+  --color-on-tertiary-container: #626262;
+  --color-tertiary-fixed: #ffffff;
+  --color-tertiary-container: #ffffff;
+  --color-outline: #a36764;
+  --color-on-secondary-fixed: #3b4045;
+  --color-tertiary: #5c5b5b;
+  --color-on-tertiary-fixed-variant: #6d6d6d;
+  --color-primary-container: #ff784e;
+  --color-secondary-fixed: #dee3e9;
+  --color-on-secondary: #eff3fa;
+  --color-on-secondary-container: #4d5258;
+  --color-on-primary-fixed-variant: #571400;
+  --color-surface-container-low: #ffedeb;
+  --color-secondary: #575c62;
+  --color-primary: #a93000;
+  --color-on-primary-container: #470f00;
+  --color-on-surface: #4e2120;
+  --color-on-background: #4e2120;
+  --color-inverse-primary: #ff571b;
+  --color-outline-variant: #e09c98;
+  --color-on-primary: #ffefeb;
+  --color-on-tertiary-fixed: #505050;
+  --color-on-secondary-fixed-variant: #575c62;
+  --color-surface: #fff4f3;
+  --color-background: #fff4f3;
+  --color-surface-container-lowest: #ffffff;
+  --color-error-container: #fb5151;
+  --color-surface-bright: #fff4f3;
+  --color-on-primary-fixed: #000000;
+  --color-surface-tint: #a93000;
+  --color-surface-dim: #ffc7c3;
+  --color-error: #b31b25;
+  --color-error-dim: #9f0519;
+  --color-on-surface-variant: #834c4a;
+  --color-inverse-surface: #240304;
+  --color-on-tertiary: #f4f2f2;
+  --color-on-error-container: #570008;
+  --color-primary-dim: #942900;
+  --color-surface-variant: #ffd2cf;
+  --color-on-error: #ffefee;
+  --color-secondary-fixed-dim: #d0d5db;
+  --color-surface-container: #ffe1df;
+  --color-surface-container-highest: #ffd2cf;
+  --color-primary-fixed-dim: #ff5d26;
+  --color-surface-container-high: #ffdad7;
+  --color-inverse-on-surface: #ce8c88;
+  --color-secondary-dim: #4b5056;
+  --color-tertiary-dim: #504f4f;
+  --color-primary-fixed: #ff784e;
+
+  --font-headline: var(--font-plus-jakarta-sans);
+  --font-body: var(--font-inter);
+  --font-label: var(--font-inter);
+
+  --radius-DEFAULT: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+}
+
+@layer base {
+  body {
+    @apply min-h-[max(884px,100dvh)];
+  }
+}
+
+@layer utilities {
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  }
+  .editorial-shadow {
+    box-shadow: 0 24px 48px -12px rgba(78, 33, 32, 0.08);
+  }
+  .kinetic-bg {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 244, 243, 0.95),
+        rgba(255, 244, 243, 0.4)
+      ),
+      url("https://lh3.googleusercontent.com/aida-public/AB6AXuAKv1EOTEFi1TGNVWzyyvG2GFjBOUBJ5ZjgcGtGnFZV-MVrbCL4c8dRDLAd-lonO15i1O1EiIZLETfe9Fb5SjhrT7PhmiY7PmCvqG720OmC-V12fbsVTTycE2Ds_muTv4y_I1ijXm8_3x97S06KQmb-ozWn-k7d_xDv8ENOrb21Do6cz9uyEGa3xk1J_B1v22W0UplyYiUK_a9ujB2fJW-b4WB-1UPgDTqdNjb65JOYy5dqF8UmOFxeUuPglkyh3rcHi_jd8UuqUGbC");
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-gradient {
+    background: linear-gradient(
+      to bottom,
+      rgba(78, 33, 32, 0) 0%,
+      rgba(78, 33, 32, 0.4) 50%,
+      rgba(36, 3, 4, 0.95) 100%
+    );
+  }
+  .shard-blur {
+    backdrop-filter: blur(20px);
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .kinetic-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(169, 48, 0, 0.8) 0%,
+      rgba(255, 120, 78, 0.4) 100%
+    );
+  }
+  .editorial-mask {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  }
+  .glass-shard {
+    background: rgba(255, 120, 78, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
