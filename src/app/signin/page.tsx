@@ -1,9 +1,19 @@
+"use client";
+
 import BottomNavigation from "@/components/BottomNavigation";
 import TopNavigation from "@/components/TopNavigation";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function SignInPage() {
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push("/feed");
+  };
+
   return (
     <>
       <TopNavigation showClose />
@@ -63,7 +73,7 @@ export default function SignInPage() {
               </p>
             </div>
 
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="space-y-2">
                 <label
                   className="text-xs font-bold text-on-surface-variant uppercase tracking-widest ml-1"

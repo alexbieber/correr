@@ -1,9 +1,19 @@
+"use client";
+
 import BottomNavigation from "@/components/BottomNavigation";
 import TopNavigation from "@/components/TopNavigation";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function SignUpPage() {
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push("/feed");
+  };
+
   return (
     <>
       <TopNavigation showClose />
@@ -21,7 +31,7 @@ export default function SignUpPage() {
             </p>
           </div>
 
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="group">
               <label className="block font-label text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-1 group-focus-within:text-primary transition-colors">
                 Full Name
